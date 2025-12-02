@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Annapurna Logistics</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="inner-page">
+
+    <!-- ========== TOP HEADER (SAME AS INDEX) ========== -->
+    <header class="site-header">
+        <div class="top-bar">
+            <!-- LEFT LOGO -->
+            <div class="top-logo-left">
+                <img src="logo.png" alt="Annapurna Logistics Logo" class="logo-left-img" />
+            </div>
+
+            <!-- CENTER TEXT -->
+            <div class="brand">
+                <div class="brand-text">
+                    <h1 class="brand-name">ANNAPURNA LOGISTICS</h1>
+                    <p class="brand-tagline">Reliable Transport &amp; Manpower Partner</p>
+                </div>
+            </div>
+
+            <!-- RIGHT NUMBERS -->
+            <div class="top-contact">
+                <a href="tel:07667079711" class="top-phone blink-phone">📞 07667&nbsp;079711</a>
+                <a href="tel:9122440600" class="top-phone blink-phone">📞 91224&nbsp;40600</a>
+            </div>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="main-nav">
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+                ☰ Menu
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ========== HEADER END ========== -->
+
+    <main class="inner-main">
+        <div class="page-wrapper">
+            <p class="breadcrumb">Home / <span>About Us</span></p>
+
+            <h1 class="page-title">Company Profile</h1>
+            <p class="page-subtitle">
+                Manpower services &amp; logistics support based in Seraikella, Jharkhand.
+            </p>
+
+            <section class="page-section">
+                <h2>About Us</h2>
+                <p>
+                    Annapurna Logistics was established in <strong>2024</strong> with the aim of providing
+                    reliable and cost-effective manpower and logistics solutions. With a commitment to
+                    excellence and customer satisfaction, we have built a reputation for
+                    <strong>timely delivery</strong>, <strong>efficient workforce management</strong>,
+                    and <strong>transparent operations</strong>.
+                </p>
+                <p>
+                    Our dedicated team ensures that every client receives the best possible service,
+                    tailored to their specific needs.
+                </p>
+            </section>
+
+            <section class="page-section">
+                <h2>Vision &amp; Mission</h2>
+
+                <h3>Vision</h3>
+                <p>
+                    To become a trusted partner in the logistics and manpower service industry by
+                    continuously improving our service standards, embracing innovation, and maintaining
+                    long-term client relationships.
+                </p>
+
+                <h3>Mission</h3>
+                <p>
+                    To deliver efficient, professional, and sustainable manpower and logistics services
+                    that help businesses grow and operate smoothly.
+                </p>
+            </section>
+
+            <section class="page-section">
+                <h2>Key Services</h2>
+                <ul class="page-list">
+                    <li>Manpower supply services for warehouses, factories &amp; logistics hubs.</li>
+                    <li>Loading &amp; unloading operations.</li>
+                    <li>Parcel &amp; goods transport coordination.</li>
+                    <li>Route planning, scheduling &amp; documentation support.</li>
+                    <li>Workforce management &amp; supervision.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-links">
+            <a href="about.html">About Us</a>
+            <span>•</span>
+            <a href="contact.html">Contact Us</a>
+            <span>•</span>
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="disclaimer.html">Disclaimer</a>
+        </p>
+        <p>© 2024 Annapurna Logistics. All rights reserved.</p>
+        <p class="footer-credit">
+            Website design &amp; development by <strong>Prince Kumar</strong>
+        </p>
+    </footer>
+
+    <!-- HAMBURGER SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.querySelector(".main-nav");
+            const toggle = document.querySelector(".nav-toggle");
+            if (nav && toggle) {
+                toggle.addEventListener("click", function () {
+                    nav.classList.toggle("open");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

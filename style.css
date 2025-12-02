@@ -1,0 +1,617 @@
+/* =============== BASIC RESET =============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+body {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =============== TOP HEADER =============== */
+
+.site-header {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* COLORED TOP BAR: LOGO LEFT, TEXT CENTER, CALL RIGHT */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #3e1f92, #f5592b, #f2c94c);
+}
+
+/* LEFT: LOGO */
+.top-logo-left img.logo-left-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffb347;
+    object-fit: cover;
+    background: #ffffff;
+}
+
+/* CENTER: BRAND TEXT */
+.brand {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-shadow:
+        1px 1px 0 #ffb347,
+        2px 2px 0 #d96d00,
+        3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.brand-tagline {
+    font-size: 11px;
+    opacity: 0.85;
+}
+
+/* RIGHT: CONTACT NUMBERS */
+.top-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+}
+
+.top-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #0a7d3a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #0df16b;
+    box-shadow: 0 0 0 0 rgba(13, 241, 107, 0.7);
+}
+
+/* blink / pulse */
+@keyframes pulsePhone {
+    0% { box-shadow: 0 0 0 0 rgba(13, 241, 107, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(13, 241, 107, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(13, 241, 107, 0); }
+}
+
+.blink-phone {
+    animation: pulsePhone 1.8s infinite;
+}
+
+/* =============== NAV BAR =============== */
+
+/* White nav bar */
+.main-nav {
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    padding: 4px 12px 8px;
+}
+
+/* 3-line button – LEFT */
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    padding: 6px 4px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #111111;
+}
+
+/* menu links hidden by default */
+.nav-links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 8px 4px 10px;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* jab .main-nav pe .open class lagegi tab dikhana */
+.main-nav.open .nav-links {
+    display: flex;
+}
+
+/* links style */
+.nav-links a {
+    font-size: 13px;
+    color: #111111;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    background: #f2f2f2;
+    color: #000000;
+}
+
+.nav-links a.active {
+    background: #ffffff;
+    color: #111111;
+    border-bottom: 2px solid #ff8c2a;
+}
+
+/* =============== HERO SECTION =============== */
+
+.hero {
+    position: relative;
+    min-height: 420px;
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
+        url("truckherosection.png");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 16px 40px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 900px;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #ffd9a3;
+}
+
+.hero-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-text {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.hero-text-secondary {
+    font-size: 12px;
+    opacity: 0.95;
+    margin-bottom: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Desktop hero bigger */
+@media (min-width: 768px) {
+    .hero {
+        min-height: 520px;
+        padding: 60px 16px;
+    }
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn.primary {
+    background: #ff8c2a;
+    border-color: #ff8c2a;
+    color: #111111;
+    font-weight: 600;
+}
+
+.btn.primary:hover {
+    background: #ffaa55;
+    border-color: #ffaa55;
+    transform: translateY(-1px);
+}
+
+.btn.outline {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.btn.outline:hover {
+    background: #ffffff;
+    color: #111111;
+}
+
+/* =============== STATS SECTION =============== */
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px 16px 24px;
+    flex-wrap: wrap;
+    background: #edf4ff;
+}
+
+.stat-card {
+    flex: 1 1 200px;
+    max-width: 280px;
+    background: #f9fbff;
+    color: #111;
+    padding: 16px 16px 18px;
+    border-radius: 12px;
+    border: 1px solid #d6e4ff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    margin-bottom: 8px;
+    color: #255dff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.stat-card p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =============== TEAM / MEETING PHOTOS =============== */
+
+.team-photo-section {
+    padding: 20px 16px 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-photo {
+    text-align: center;
+}
+
+.circle-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffb347;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 0 auto 10px;
+}
+
+.circle-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-caption {
+    font-size: 13px;
+    color: #444444;
+}
+
+/* =============== CONTENT SECTIONS =============== */
+
+.content-section {
+    padding: 24px 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #222222;
+}
+
+.section-intro {
+    font-size: 14px;
+    margin-bottom: 14px;
+    color: #555555;
+}
+
+.content-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.text-link {
+    font-size: 14px;
+    color: #ff8c2a;
+    font-weight: 500;
+}
+
+/* CARDS GRID */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.cards-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* SERVICE / AREA / TRUSTED CARDS */
+.info-card {
+    background: #fffaf3;
+    border-radius: 12px;
+    border: 1px solid #f0e0cf;
+    padding: 14px 14px 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.info-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #222222;
+}
+
+.info-card ul {
+    list-style: disc;
+    padding-left: 18px;
+}
+
+.info-card li {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 4px;
+}
+
+/* TRUSTED BY ACTIONS */
+.trusted-actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* =============== FOOTER =============== */
+
+.site-footer {
+    background: #111111;
+    color: #dddddd;
+    text-align: center;
+    padding: 16px 12px 22px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.footer-links {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: #ffcf8a;
+    margin: 0 4px;
+}
+
+.footer-credit {
+    margin-top: 4px;
+    color: #ffcf8a;
+}
+
+/* =============== INNER PAGES (ABOUT / CONTACT / PRIVACY / DISCLAIMER) =============== */
+
+.inner-main {
+    padding: 18px 8px 24px;
+    background: #f3f4f6;
+}
+
+.page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px 18px 22px;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.breadcrumb {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #777777;
+    text-align: center;
+}
+
+.breadcrumb span {
+    color: #111111;
+    font-weight: 600;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #666666;
+    margin-bottom: 16px;
+}
+
+.page-section {
+    margin-top: 16px;
+}
+
+.page-section h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #222222;
+}
+
+.page-section h3 {
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: #333333;
+}
+
+.page-section p,
+.page-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.page-list {
+    list-style: disc;
+    padding-left: 18px;
+}
+
+.page-list li {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* CONTACT GRID */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 8px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 8px;
+    border: 1px solid #d4d4d4;
+    padding: 8px 10px;
+    font-size: 13px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff8c2a;
+    box-shadow: 0 0 0 2px rgba(255, 140, 42, 0.2);
+}
+
+.small-note {
+    font-size: 11px;
+    color: #888888;
+    margin-bottom: 8px;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 4px;
+}
+
+/* =============== RESPONSIVE (MOBILE) =============== */
+
+@media (max-width: 768px) {
+    .top-bar {
+        padding-inline: 10px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .cards-grid,
+    .cards-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-section {
+        padding-inline: 12px;
+    }
+
+    .hero {
+        padding-inline: 12px;
+        min-height: 360px;
+    }
+
+    .team-photo-section {
+        padding-inline: 16px;
+    }
+
+    /* inner pages */
+    .page-wrapper {
+        margin-inline: 6px;
+        padding-inline: 14px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
